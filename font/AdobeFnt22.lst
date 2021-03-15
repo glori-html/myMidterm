@@ -1,0 +1,573 @@
+%!Adobe-FontList 1.22
+%Locale:0x404
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:CID
+FontName:NotoSansTC-Black
+FamilyName:Noto Sans TC
+StyleName:Black
+FullName:Noto Sans TC Black
+MenuName:Noto Sans TC Black
+StyleBits:0
+FamilyNameNative:Noto Sans TC
+StyleNameNative:Black
+FullNameNative:Noto Sans TC Black
+WritingScript:Japanese
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\NotoSansTC-Black.otf
+DataFormat:sfntData
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:6119112
+FileModTime:1612340396
+WeightClass:900
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Noto Sans TC Black
+NameArray:0,Win,16,Noto Sans TC
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:CID
+FontName:NotoSansTC-Bold
+FamilyName:Noto Sans TC
+StyleName:Bold
+FullName:Noto Sans TC Bold
+MenuName:Noto Sans TC
+StyleBits:2
+FamilyNameNative:Noto Sans TC
+StyleNameNative:Bold
+FullNameNative:Noto Sans TC Bold
+WritingScript:Japanese
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\NotoSansTC-Bold.otf
+DataFormat:sfntData
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:5942584
+FileModTime:1612340396
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Noto Sans TC
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:CID
+FontName:NotoSansTC-Light
+FamilyName:Noto Sans TC
+StyleName:Light
+FullName:Noto Sans TC Light
+MenuName:Noto Sans TC Light
+StyleBits:0
+FamilyNameNative:Noto Sans TC
+StyleNameNative:Light
+FullNameNative:Noto Sans TC Light
+WritingScript:Japanese
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\NotoSansTC-Light.otf
+DataFormat:sfntData
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:5733164
+FileModTime:1612340396
+WeightClass:300
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Noto Sans TC Light
+NameArray:0,Win,16,Noto Sans TC
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:CID
+FontName:NotoSansTC-Medium
+FamilyName:Noto Sans TC
+StyleName:Medium
+FullName:Noto Sans TC Medium
+MenuName:Noto Sans TC Medium
+StyleBits:0
+FamilyNameNative:Noto Sans TC
+StyleNameNative:Medium
+FullNameNative:Noto Sans TC Medium
+WritingScript:Japanese
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\NotoSansTC-Medium.otf
+DataFormat:sfntData
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:5787960
+FileModTime:1612340396
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Noto Sans TC Medium
+NameArray:0,Win,16,Noto Sans TC
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:CID
+FontName:NotoSansTC-Regular
+FamilyName:Noto Sans TC
+StyleName:Regular
+FullName:Noto Sans TC
+MenuName:Noto Sans TC
+StyleBits:0
+FamilyNameNative:Noto Sans TC
+StyleNameNative:Regular
+FullNameNative:Noto Sans TC Regular
+WritingScript:Japanese
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\NotoSansTC-Regular.otf
+DataFormat:sfntData
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:5766428
+FileModTime:1612340396
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Noto Sans TC
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:CID
+FontName:NotoSansTC-Thin
+FamilyName:Noto Sans TC
+StyleName:Thin
+FullName:Noto Sans TC Thin
+MenuName:Noto Sans TC Thin
+StyleBits:0
+FamilyNameNative:Noto Sans TC
+StyleNameNative:Thin
+FullNameNative:Noto Sans TC Thin
+WritingScript:Japanese
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\NotoSansTC-Thin.otf
+DataFormat:sfntData
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:5344476
+FileModTime:1612340396
+WeightClass:250
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Noto Sans TC Thin
+NameArray:0,Win,16,Noto Sans TC
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Taviraj-Black
+FamilyName:Taviraj
+StyleName:Black
+FullName:Taviraj Black
+MenuName:Taviraj Black
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\Taviraj-Black.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:223080
+FileModTime:1612340378
+WeightClass:900
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Taviraj Black
+NameArray:0,Win,16,Taviraj
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Taviraj-BlackItalic
+FamilyName:Taviraj
+StyleName:Black Italic
+FullName:Taviraj Black Italic
+MenuName:Taviraj Black
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\Taviraj-BlackItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:237860
+FileModTime:1612340378
+WeightClass:900
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,Taviraj Black
+NameArray:0,Win,16,Taviraj
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Taviraj-Bold
+FamilyName:Taviraj
+StyleName:Bold
+FullName:Taviraj Bold
+MenuName:Taviraj
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\Taviraj-Bold.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:214108
+FileModTime:1612340378
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Taviraj
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Taviraj-BoldItalic
+FamilyName:Taviraj
+StyleName:Bold Italic
+FullName:Taviraj Bold Italic
+MenuName:Taviraj
+StyleBits:3
+WritingScript:Roman
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\Taviraj-BoldItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:238104
+FileModTime:1612340378
+WeightClass:700
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,Taviraj
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Taviraj-ExtraBold
+FamilyName:Taviraj
+StyleName:ExtraBold
+FullName:Taviraj ExtraBold
+MenuName:Taviraj ExtraBold
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\Taviraj-ExtraBold.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:213016
+FileModTime:1612340378
+WeightClass:800
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Taviraj ExtraBold
+NameArray:0,Win,16,Taviraj
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Taviraj-ExtraBoldItalic
+FamilyName:Taviraj
+StyleName:ExtraBold Italic
+FullName:Taviraj ExtraBold Italic
+MenuName:Taviraj ExtraBold
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\Taviraj-ExtraBoldItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:239112
+FileModTime:1612340378
+WeightClass:800
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,Taviraj ExtraBold
+NameArray:0,Win,16,Taviraj
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Taviraj-ExtraLight
+FamilyName:Taviraj
+StyleName:ExtraLight
+FullName:Taviraj ExtraLight
+MenuName:Taviraj ExtraLight
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\Taviraj-ExtraLight.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:208928
+FileModTime:1612340378
+WeightClass:275
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Taviraj ExtraLight
+NameArray:0,Win,16,Taviraj
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Taviraj-ExtraLightItalic
+FamilyName:Taviraj
+StyleName:ExtraLight Italic
+FullName:Taviraj ExtraLight Italic
+MenuName:Taviraj ExtraLight
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\Taviraj-ExtraLightItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:223948
+FileModTime:1612340378
+WeightClass:275
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,Taviraj ExtraLight
+NameArray:0,Win,16,Taviraj
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Taviraj-Italic
+FamilyName:Taviraj
+StyleName:Italic
+FullName:Taviraj Italic
+MenuName:Taviraj
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\Taviraj-Italic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:226640
+FileModTime:1612340378
+WeightClass:400
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,Taviraj
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Taviraj-Light
+FamilyName:Taviraj
+StyleName:Light
+FullName:Taviraj Light
+MenuName:Taviraj Light
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\Taviraj-Light.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:204504
+FileModTime:1612340378
+WeightClass:300
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Taviraj Light
+NameArray:0,Win,16,Taviraj
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Taviraj-LightItalic
+FamilyName:Taviraj
+StyleName:Light Italic
+FullName:Taviraj Light Italic
+MenuName:Taviraj Light
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\Taviraj-LightItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:209564
+FileModTime:1612340378
+WeightClass:300
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,Taviraj Light
+NameArray:0,Win,16,Taviraj
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Taviraj-Medium
+FamilyName:Taviraj
+StyleName:Medium
+FullName:Taviraj Medium
+MenuName:Taviraj Medium
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\Taviraj-Medium.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:220472
+FileModTime:1612340378
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Taviraj Medium
+NameArray:0,Win,16,Taviraj
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Taviraj-MediumItalic
+FamilyName:Taviraj
+StyleName:Medium Italic
+FullName:Taviraj Medium Italic
+MenuName:Taviraj Medium
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\Taviraj-MediumItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:234472
+FileModTime:1612340378
+WeightClass:500
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,Taviraj Medium
+NameArray:0,Win,16,Taviraj
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Taviraj-Regular
+FamilyName:Taviraj
+StyleName:Regular
+FullName:Taviraj Regular
+MenuName:Taviraj
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\Taviraj-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:214232
+FileModTime:1612340378
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Taviraj
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Taviraj-SemiBold
+FamilyName:Taviraj
+StyleName:SemiBold
+FullName:Taviraj SemiBold
+MenuName:Taviraj SemiBold
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\Taviraj-SemiBold.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:212212
+FileModTime:1612340378
+WeightClass:600
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Taviraj SemiBold
+NameArray:0,Win,16,Taviraj
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Taviraj-SemiBoldItalic
+FamilyName:Taviraj
+StyleName:SemiBold Italic
+FullName:Taviraj SemiBold Italic
+MenuName:Taviraj SemiBold
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\Taviraj-SemiBoldItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:229784
+FileModTime:1612340378
+WeightClass:600
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,Taviraj SemiBold
+NameArray:0,Win,16,Taviraj
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Taviraj-Thin
+FamilyName:Taviraj
+StyleName:Thin
+FullName:Taviraj Thin
+MenuName:Taviraj Thin
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\Taviraj-Thin.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:204864
+FileModTime:1612340378
+WeightClass:250
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Taviraj Thin
+NameArray:0,Win,16,Taviraj
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Taviraj-ThinItalic
+FamilyName:Taviraj
+StyleName:Thin Italic
+FullName:Taviraj Thin Italic
+MenuName:Taviraj Thin
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Student\Desktop\midterm\Font\Taviraj-ThinItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:218388
+FileModTime:1612340378
+WeightClass:250
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,Taviraj Thin
+NameArray:0,Win,16,Taviraj
+%EndFont
+

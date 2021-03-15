@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>莓果三重奏(片裝)</title>
+    <link rel="icon" href="./images/browser-icon.png">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <link rel="stylesheet" href="./normalize.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        /* -------------menu-------------- */
+
+        body {
+            width: 100%;
+            background: #fff;
+            cursor: url(./images/cursor.png), auto;
+
+        }
+
+        p {
+            font-size: 16px;
+            font-family: 'Noto Sans TC';
+            letter-spacing: .1rem;
+            text-align: justify;
+        }
+
+        header {
+            width: 100%;
+        }
+
+        .top-nav {
+            width: 100%;
+            height: 120px;
+            background-color: #232323;
+        }
+
+        #menuToggle {
+            display: block;
+            position: absolute;
+            top: 50px;
+            margin-left: 50px;
+            z-index: 1;
+
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        #menuToggle a {
+            width: 100%;
+            height: auto;
+            text-decoration: none;
+            color: #F2D5C4;
+            font-family: 'Taviraj', serif;
+            transition: color 0.3s ease;
+        }
+
+        #menuToggle a:hover {
+            color: #fff;
+        }
+
+
+        #menuToggle input {
+            display: block;
+            width: 40px;
+            height: 32px;
+            position: absolute;
+            top: -7px;
+            left: -5px;
+
+            cursor: pointer;
+
+            opacity: 0;
+            z-index: 2;
+
+            -webkit-touch-callout: none;
+        }
+
+        #menuToggle span {
+            display: block;
+            width: 33px;
+            height: 4px;
+            margin-bottom: 5px;
+            position: relative;
+
+            background: #F2D5C4;
+            border-radius: 3px;
+
+            z-index: 1;
+
+            transform-origin: 4px 0px;
+
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+                background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+                opacity 0.55s ease;
+        }
+
+        #menuToggle span:first-child {
+            transform-origin: 0% 0%;
+        }
+
+        #menuToggle span:nth-last-child(2) {
+            transform-origin: 0% 100%;
+        }
+
+        #menuToggle input:checked~span {
+            opacity: 1;
+            transform: rotate(45deg) translate(-2px, -1px);
+            background: #F2D5C4;
+        }
+
+
+        #menuToggle input:checked~span:nth-last-child(3) {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+        }
+
+        #menuToggle input:checked~span:nth-last-child(2) {
+            transform: rotate(-45deg) translate(0, -1px);
+        }
+
+        #menu {
+            position: absolute;
+            width: 300px;
+            margin: -100px 0 0 -50px;
+            padding: 50px;
+            padding-top: 125px;
+
+            background: #232323;
+            list-style-type: none;
+            -webkit-font-smoothing: antialiased;
+
+            transform-origin: 0% 0%;
+            transform: translate(-100%, 0);
+
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        }
+
+        #menu li {
+            padding: 10px 0;
+            font-size: 22px;
+        }
+
+        #menuIcons {
+            display: block;
+            position: absolute;
+            margin-left: auto;
+            -webkit-user-select: none;
+            user-select: none;
+            z-index: 3;
+            top: 50px;
+            right: 35px;
+            cursor: pointer;
+        }
+
+        #icons {
+            display: flex;
+            list-style-type: none;
+            cursor: pointer;
+        }
+
+        #icons li {
+            padding: 12px 20px;
+        }
+
+        #menuToggle input:checked~ul {
+            transform: none;
+        }
+
+        #icons li.instagram {
+            background-image: url(./images/instagram.svg);
+            background-repeat: no-repeat;
+
+        }
+
+        #icons li.shopping_bag {
+            background-image: url(./images/shopping-bag.svg);
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+
+        .logo {
+            vertical-align: middle;
+            position: absolute;
+            width: 100px;
+            height: auto;
+            top: 25px;
+            left: 50%;
+            z-index: 999;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .logo {
+                left: 35%;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .logo img {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+
+        .logo img {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+
+        /* -------------menu ends-------------- */
+
+        @media screen and (max-width: 767px) {
+            .col-6 {
+                max-width: 100%;
+            }
+        }
+
+        .container-fluid {
+            /* width: 90%; */
+            margin-top: 50px;
+        }
+
+        p {
+            font-family: "Noto Sans TC";
+        }
+
+        @media only screen and (max-width: 767px) {
+
+            .left-wrap {
+                position: relative;
+                width: 100%;
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+        }
+
+        .breadcrumb {
+            background-color: #fff;
+        }
+
+        .breadcrumb-item a {
+            color: #232323;
+            font-size: 18px;
+            font-family: "Noto Sans TC";
+
+        }
+
+
+        .active {
+            font-family: "Noto Sans TC";
+            color: #232323;
+
+        }
+
+        .right-wrap {
+            padding: 40px;
+        }
+
+        .product-images {
+            width: 100%;
+        }
+
+        @media screen and (max-width: 767px) {
+            .product-images {
+                width: 100%;
+            }
+        }
+
+        .main-img {
+            width: 100%;
+        }
+
+        .sm-img {
+            width: 50%;
+            display: flex;
+            padding-top: 20px;
+            margin-left: 0;
+        }
+
+        .sm-img-left {
+            width: 100%;
+            margin-left: 0;
+            /* padding-right: 10px; */
+        }
+
+        .sm-img-right {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        .product-title {
+            margin-top: 20px;
+            font-family: 'Noto Serif TC', serif;
+            letter-spacing: .3rem;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 767px) {
+            .product-title {
+                font-size: 2rem;
+                letter-spacing: .2rem;
+            }
+        }
+
+        .big-descriptions {
+            font-size: 18px;
+            font-family: 'Noto Sans TC';
+            letter-spacing: .3rem;
+            text-align: justify;
+            padding-top: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #F2D5C4;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .big-descriptions {
+                font-size: 16px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .right-wrap {
+                /* margin: 0 auto; */
+                text-align: justify;
+                padding-left: 20px;
+                padding-right: 20px;
+
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+
+            .row,
+            .container-fluid {
+                margin-left: 0;
+                margin-right: 0;
+
+            }
+        }
+
+        .vegan {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .vegan-icon {
+            width: 50px;
+            margin-right: 20px;
+        }
+
+        .vegan-text {
+            font-size: 18px;
+            letter-spacing: .3rem;
+        }
+
+        .ingredients,
+        .allergy,
+        .expiration {
+            width: 160px;
+            border: 2px solid #F2D5C4;
+            padding: 10px 10px 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: .3rem;
+            font-family: 'Noto Serif TC', serif;
+
+        }
+
+        .ingredients-info,
+        .allergy-info,
+        .expiration-info {
+            padding: 0px 0px 0px 20px;
+            font-size: 17px;
+            letter-spacing: .1rem;
+            margin-bottom: 30px;
+            line-height: 1.5rem;
+
+        }
+
+        .unit {
+            width: 250px;
+            border: 1px solid #F2D5C4;
+            background: #fff;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+        }
+
+        .quantity {
+            border: none;
+            width: 100px;
+            text-align: center;
+            background: none;
+            font-family: 'Noto Serif TC', serif;
+            font-weight: bold;
+        }
+
+        .minus {
+            width: 30px;
+            height: 30px;
+            background-color: #F2D5C4;
+            border-radius: 50%;
+            border: none;
+            font-weight: bold;
+        }
+
+        .add {
+            width: 30px;
+            height: 30px;
+            background-color: #F2D5C4;
+            border-radius: 50%;
+            border: none;
+            font-weight: bold;
+        }
+
+        .add-to-cart {
+            /* padding-top: 10px; */
+            width: 250px;
+            flex-wrap: wrap;
+            /* justify-content: center; */
+
+        }
+
+        .add-to-cart p {
+            text-align: center;
+        }
+
+        .price {
+            width: 100px;
+            border: 1px solid #F2D5C4;
+            padding-top: 10px;
+            background: #fff;
+        }
+
+        .price p {
+            font-family: 'Taviraj', serif;
+            font-weight: bold;
+        }
+
+        .add-bag {
+            width: 150px;
+            border: 1px solid #F2D5C4;
+            padding-top: 10px;
+            background-color: #F2D5C4;
+        }
+
+        .add-bag p {
+            font-family: 'Noto Serif TC', serif;
+            font-weight: 700;
+            letter-spacing: .4rem;
+        }
+
+        /* Modal */
+
+        .modal,
+        .modal-box {
+            z-index: 900;
+        }
+
+        .modal-sandbox {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: transparent;
+
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, .8);
+            overflow: auto;
+            text-align: center;
+
+        }
+
+        .modal-box {
+            position: relative;
+            width: 80%;
+            max-width: 400px;
+            margin: 100px auto;
+            animation-name: modalbox;
+            animation-duration: .4s;
+            animation-timing-function: cubic-bezier(0, 0, .3, 1.6);
+        }
+
+        .modal-header {
+            padding: 20px 40px;
+            background: #232323;
+            font-family: 'Noto Serif TC', serif;
+            letter-spacing: .1rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .shopping_bag_modal {
+            width: 50px;
+            margin: 0 auto;
+        }
+
+        .modal-body {
+            color: #F2D5C4;
+            background: #232323;
+            font-family: 'Noto Serif TC', serif;
+            letter-spacing: .1rem;
+            padding: 30px 10px;
+        }
+
+        .modal-body p {
+            font-family: 'Noto Serif TC', serif;
+            letter-spacing: .1rem;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* Close Button */
+        .close-modal {
+            width: 150px;
+            border: transparent;
+            background-color: #F2D5C4;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            cursor: pointer;
+            font-family: 'Noto Sans';
+            letter-spacing: .1rem;
+        }
+
+        .add-bag:hover {
+            background-color: #F5DED6;
+        }
+
+        .close-modal:hover {
+            background-color: #FAEFEB;
+        }
+
+        /* Animation */
+        @-webkit-keyframes modalbox {
+            0% {
+                top: -250px;
+                opacity: 0;
+            }
+
+            100% {
+                top: 0;
+                opacity: 1;
+            }
+        }
+
+        @keyframes modalbox {
+            0% {
+                top: -250px;
+                opacity: 0;
+            }
+
+            100% {
+                top: 0;
+                opacity: 1;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .modal-body h1 {
+                font-size: 30px;
+            }
+        }
+
+        /* Modal ends */
+        .tc {
+            margin-top: 50px;
+        }
+
+        .bag-icon {
+            width: 30px;
+            margin-right: 20px;
+        }
+
+
+        .tc-texts {
+            /* padding: 10px 10px 10px 25px; */
+            font-size: 16px;
+            letter-spacing: .3rem;
+            margin-bottom: 50px;
+            text-align: justify;
+            line-height: 1.5rem;
+        }
+
+        .tc-title {
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'Noto Serif TC', serif;
+            letter-spacing: .3rem;
+            text-align: justify;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #F2D5C4;
+        }
+
+        /* -------------------- Footer ------------------ */
+
+        .footer {
+            width: 100%;
+            background-color: #232323;
+            color: #F2D5C4;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .copy-right {
+            text-align: center;
+
+        }
+
+        /* remove button border */
+        button,
+        button:active,
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="top-nav" role="navigation">
+            <div id="menuToggle" class="menu-fixed">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+
+                <ul id="menu">
+                    <a href="morning.bakery.html#about">
+                        <li>ABOUT</li>
+                    </a>
+                    <a href="morning.bakery.html#product">
+                        <li>PRODUCTS</li>
+                    </a>
+                    <a href="morning.bakery.html#reviews">
+                        <li>REVIEWS</li>
+                    </a>
+                    <a href="morning.bakery.html#contact">
+                        <li>CONTACT</li>
+                    </a>
+                </ul>
+            </div>
+            <!-- Menu Icons -->
+            <div id="menuIcons">
+                <ul id="icons">
+                    <a href="https://www.instagram.com/">
+                        <li class="instagram"></li>
+                    </a>
+                    <a href="#">
+                        <li class="shopping_bag"></li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+        <!-- logo -->
+        <div class="logo animatable fadeInUp"><a href="morning.bakery.html"><img src="images/logo-light.svg"></a></div>
+        <!-- logo -->
+    </header>
+    <!-- header ends -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-4 left-wrap">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="morning.bakery.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="morning.bakery.html#product">Product</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">莓果三重奏(片裝)</li>
+                    </ol>
+                </nav>
+                <div class="product-images">
+                    <img class="main-img" src="images/bread-4.jpg">
+                    <div class="sm-img row--center">
+                        <img class="sm-img-left" src="images/bread-4.jpg">
+                        <img class="sm-img-right" src="images/bread-4b.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-4 right-wrap">
+
+                <h1 class="product-title">莓果三重奏(片裝)</h1>
+                <p class="big-descriptions">無額外添加糖和油的秤重麵包，和入滿滿的葡萄乾、青提子與野生小藍莓三種果乾</p>
+                <div class="vegan">
+                    <p class="vegan-text"><img class="vegan-icon" src="./images/vegan.svg">純素(無奶蛋)</p>
+                </div>
+                <div class="ingredients">內容物成分:</div>
+                <p class="ingredients-info">日本麵粉、自家培養魯邦種、全粒小麥粉、野生小藍莓、葡萄乾、青堤子、酵母、麥芽、赤穗天鹽</p>
+                <div class="allergy">過敏原:</div>
+                <p class="allergy-info">麩質</p>
+                <div class="expiration">保存期限:</div>
+                <p class="expiration-info">常溫1天、冷藏2天、冷凍10天</p>
+                <div class="unit">
+                    <button class="minus">-</button>
+                    <input class="quantity" type="text" value="1" />
+                    <button class="add">+</button>
+                </div>
+                <div class="add-to-cart d-flex">
+                    <div class="price">
+                        <p>NT$50</p>
+                    </div>
+                    <button type="button" class="add-bag modal-trigger" data-modal="modal-name">
+                        <p>放入購物袋</p>
+                    </button>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal" id="modal-name">
+                    <div class="modal-sandbox"></div>
+                    <div class="modal-box">
+                        <div class="modal-header">
+                            <!-- <div class="close-modal">&#10006;</div> -->
+                            <img class="shopping_bag_modal" src="./images/shopping-bag.svg">
+                        </div>
+                        <div class="modal-body">
+                            <h1>已加入購物袋</h1>
+                            <p>已將商品放入購物袋</p>
+                            <button class="close-modal">我瞭解了</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+
+                <div class="tc">
+                    <h5 class="tc-title"><img class="bag-icon" src="./images/shopping-bag.svg">訂購注意事項</h5>
+                    <p class="tc-texts">⦿ 商品採新鮮製作、當日寄出，還請訂購後耐心等候。<br><br>
+                        ⦿ 請注意：例假日及周日不出貨，訂單將於上班日後依照訂單先後順序處理。<br><br>
+                        ⦿ 若在天氣狀況不佳及交通道路中斷等配送困難的情況下，送達時間有可能變動。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-------------------- Footer Starts -------------------->
+
+    <div class="footer">
+        <p class="copy-right">2021 © 晨食烘培 Morning Bakery.</p>
+    </div>
+
+    <!-------------------- Footer Ends -------------------->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        // -------------------- add to cart -----------------------
+
+        $('.minus').click(function () {
+            var $input = $(this).parent().find('input');
+            var $amount = $(this).parent().next().find('.price p');
+            var count = parseInt($input.val()) - 1;
+            count = count < 1 ? 1 : count;
+            $amount.text('NT$' + (parseInt($input.val()) - 1) * $amount[0].innerHTML.replace('NT$', '') / parseInt($input.val()))
+            $input.val(parseInt($input.val()) - 1);
+            // $input.val(count);
+            // $input.change();
+            // return false;
+        });
+        $('.add').click(function () {
+            var $input = $(this).parent().find('input');
+            var $amount = $(this).parent().next().find('.price p');
+            console.log('amount', $amount[0].innerHTML.replace('NT$', ''))
+            $amount.text('NT$' + (parseInt($input.val()) + 1) * $amount[0].innerHTML.replace('NT$', '') / parseInt($input.val()))
+            $input.val(parseInt($input.val()) + 1);
+        });
+
+        // ------------------- modal -----------------------
+        $(".modal-trigger").click(function (e) {
+            e.preventDefault();
+            dataModal = $(this).attr("data-modal");
+            $("#" + dataModal).css({ "display": "block" });
+            // $("body").css({"overflow-y": "hidden"}); //Prevent double scrollbar.
+        });
+
+        $(".close-modal, .modal-sandbox").click(function () {
+            $(".modal").css({ "display": "none" });
+            // $("body").css({"overflow-y": "auto"}); //Prevent double scrollbar.
+        });
+
+
+        // ------------------- recalculate subtotal -----------------------
+
+
+
+        // -------------------- click product image -----------------------
+
+        $('.sm-img img').click(function () {
+            let imgSrc = $(this).attr('src');
+            $('.main-img').attr('src', imgSrc);
+
+            $('.sm-img img').click(function () {
+                $(this).css('border', '2px solid #F2D5C4').siblings().css('border', 'none');
+            })
+        })
+        // -------------------- click product image -----------------------
+
+    </script>
+</body>
+
+</html>

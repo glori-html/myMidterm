@@ -1,0 +1,2507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晨食烘培｜Morning Bakery</title>
+    <link rel="icon" href="./images/browser-icon.png">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <link rel="stylesheet" href="./normalize.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            background: #F7F5E6;
+            /* height: 100%; */
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            cursor: url(./images/cursor.png), auto;
+        }
+
+        .slider {
+            margin: 0 auto;
+            width: 100%;
+            height: auto;
+        }
+
+        .slide_viewer {
+            height: 1080px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide_group {
+            height: 100%;
+            position: relative;
+            width: 100%;
+        }
+
+        .slide {
+            display: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+        }
+
+        .slide:first-child {
+            display: block;
+        }
+
+        .slide:nth-of-type(1) {
+            background-image: url(./images/mainvisual_1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 70%;
+            animation: zooomin 20s ease-in infinite;
+            transition: all 3 ease-in-out;
+        }
+
+        .slide:nth-of-type(2) {
+            background-image: url(./images/mainvisual_2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 70%;
+            animation: zooomin 20s ease-in infinite;
+            transition: all 3 ease-in-out;
+        }
+
+        .slide:nth-of-type(3) {
+            background-image: url(./images/mainvisual_3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 70%;
+            animation: zooomin 20s ease-in infinite;
+            transition: all 3 ease-in-out;
+        }
+
+        @keyframes zooomin {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.5);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .slide_buttons {
+            left: 0;
+            position: absolute;
+            right: 0;
+            text-align: center;
+        }
+
+        a.slide_btn {
+            color: #474544;
+            font-size: 42px;
+            margin: 0 0.175em;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .slide_btn.active,
+        .slide_btn:hover {
+            color: #428CC6;
+            cursor: pointer;
+        }
+
+        /* Arrows */
+        .directional_nav {
+            /* height: 340px; */
+            margin: 0 auto;
+            /* position: relative; */
+            top: -65%;
+        }
+
+        .previous_btn {
+            bottom: 50px;
+            left: 50px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+        }
+
+        .next_btn {
+            bottom: 50px;
+            margin: auto;
+            position: absolute;
+            right: 50px;
+            top: 0;
+        }
+
+        .previous_btn,
+        .next_btn {
+            cursor: pointer;
+            height: 65px;
+            opacity: 0.5;
+            -webkit-transition: opacity 0.4s ease-in-out;
+            -moz-transition: opacity 0.4s ease-in-out;
+            -ms-transition: opacity 0.4s ease-in-out;
+            -o-transition: opacity 0.4s ease-in-out;
+            transition: opacity 0.4s ease-in-out;
+            width: 65px;
+        }
+
+        .previous_btn:hover,
+        .next_btn:hover {
+            opacity: 1;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .previous_btn {
+                left: 50px;
+                display: none;
+            }
+
+            .next_btn {
+                right: 50px;
+                display: none;
+            }
+        }
+
+        nav {
+            width: 100%;
+        }
+
+        #menuToggle {
+            display: block;
+            position: fixed;
+            top: 50px;
+            margin-left: 50px;
+            z-index: 1;
+
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        #menuToggle a {
+            width: 100%;
+            height: auto;
+            text-decoration: none;
+            color: #F2D5C4;
+            font-family: 'Taviraj', serif;
+            transition: color 0.3s ease;
+        }
+
+        #menuToggle a:hover {
+            color: #fff;
+        }
+
+
+        #menuToggle input {
+            display: block;
+            width: 40px;
+            height: 32px;
+            position: absolute;
+            top: -7px;
+            left: -5px;
+
+            cursor: pointer;
+
+            opacity: 0;
+            z-index: 2;
+
+            -webkit-touch-callout: none;
+        }
+
+        #menuToggle span {
+            display: block;
+            width: 33px;
+            height: 4px;
+            margin-bottom: 5px;
+            position: relative;
+
+            background: #F2D5C4;
+            border-radius: 3px;
+
+            z-index: 1;
+
+            transform-origin: 4px 0px;
+
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+                background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+                opacity 0.55s ease;
+        }
+
+        #menuToggle span:first-child {
+            transform-origin: 0% 0%;
+        }
+
+        #menuToggle span:nth-last-child(2) {
+            transform-origin: 0% 100%;
+        }
+
+        #menuToggle input:checked~span {
+            opacity: 1;
+            transform: rotate(45deg) translate(-2px, -1px);
+            background: #F2D5C4;
+        }
+
+
+        #menuToggle input:checked~span:nth-last-child(3) {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+        }
+
+        #menuToggle input:checked~span:nth-last-child(2) {
+            transform: rotate(-45deg) translate(0, -1px);
+        }
+
+        #menu {
+            position: absolute;
+            width: 300px;
+            margin: -100px 0 0 -50px;
+            padding: 50px;
+            padding-top: 125px;
+
+            background: #232323;
+            list-style-type: none;
+            -webkit-font-smoothing: antialiased;
+
+            transform-origin: 0% 0%;
+            transform: translate(-100%, 0);
+
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        }
+
+        #menu li {
+            padding: 10px 0;
+            font-size: 22px;
+        }
+
+        #menuIcons {
+            display: block;
+            position: absolute;
+            margin-left: auto;
+            -webkit-user-select: none;
+            user-select: none;
+            z-index: 3;
+            top: 50px;
+            right: 35px;
+            cursor: pointer;
+
+        }
+
+        #icons {
+            display: flex;
+            list-style-type: none;
+            cursor: pointer;
+        }
+
+        #icons li {
+            padding: 12px 20px;
+        }
+
+        #menuToggle input:checked~ul {
+            transform: none;
+        }
+
+        #icons li.instagram {
+            background-image: url(./images/instagram.svg);
+            background-repeat: no-repeat;
+
+        }
+
+        #icons li.shopping_bag {
+            background-image: url(./images/shopping-bag.svg);
+            background-repeat: no-repeat;
+            cursor: pointer;
+
+        }
+
+        .logo {
+            vertical-align: middle;
+            position: absolute;
+            width: 150px;
+            height: auto;
+            top: 50px;
+            margin-left: -75px;
+            left: 50%;
+            z-index: 999;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .logo {
+                width: 150px;
+                top: 40%;
+            }
+        }
+
+        .logo img {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .scroll {
+            position: absolute;
+            z-index: 999;
+            left: 50%;
+            margin-left: -30px;
+            bottom: 45px;
+        }
+
+        .scroll_text {
+            font-size: 12px;
+            color: #F2D5C4;
+            text-align: center;
+            letter-spacing: .1em;
+            font-family: 'Taviraj', serif;
+
+        }
+
+        .arrows {
+            width: 60px;
+            height: 72px;
+            position: absolute;
+            left: 50%;
+            margin-left: -30px;
+            bottom: 55px;
+        }
+
+        .arrows path {
+            stroke: #F2D5C4;
+            fill: transparent;
+            stroke-width: 2px;
+            animation: arrow 2s infinite;
+            -webkit-animation: arrow 2s infinite;
+        }
+
+        @media only screen and (max-width: 767px) {
+            #menuToggle {
+                position: absolute;
+            }
+        }
+
+        @keyframes arrow {
+            0% {
+                opacity: 0
+            }
+
+            40% {
+                opacity: 1
+            }
+
+            80% {
+                opacity: 0
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        @-webkit-keyframes arrow {
+            0% {
+                opacity: 0
+            }
+
+            40% {
+                opacity: 1
+            }
+
+            80% {
+                opacity: 0
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        .arrows path.a1 {
+            animation-delay: -1s;
+            -webkit-animation-delay: -1s;
+        }
+
+        .arrows path.a2 {
+            animation-delay: -0.5s;
+            -webkit-animation-delay: -0.5s;
+        }
+
+        .arrows path.a3 {
+            animation-delay: 0s;
+            -webkit-animation-delay: 0s;
+        }
+
+        /* landing page ends */
+
+        /* three descriptions start */
+
+        .container {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        /* 
+        .col-md-5,
+        .col-sm-6 {
+            margin: 0 auto;
+        } */
+
+        @media only screen and (max-width: 767px) {
+
+            .col-md-4,
+            .col-sm-4 {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+        }
+
+        .col--inbl {
+            display: inline-block;
+            float: none;
+        }
+
+        .row--center {
+            text-align: center;
+            margin: 0 auto;
+
+        }
+
+        .row--small {
+            /* max-width: 960px; */
+            margin: 0 auto;
+        }
+
+        /* three descriptions */
+
+        #about {
+            background-image: url(./images/wheat-svg-bg.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        @media only screen and (max-width: 767px) {
+            #about {
+                background-size: cover;
+            }
+        }
+
+        .bread__name {
+            letter-spacing: 1px;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .three__descript {
+            width: 90%;
+        }
+
+        figure {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-wrap figure img {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+        }
+
+        .image-wrap figure:hover img {
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+        }
+
+        .image-wrap figure:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+
+        .bread__descr {
+            margin: 0;
+            line-height: 23px;
+        }
+
+        .about-info {
+            background-image: url(./images/title-background.svg);
+            background-repeat: no-repeat;
+            width: 100%;
+            margin: 0 auto;
+            background-size: cover;
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .about-info {
+                background-size: contain;
+            }
+        }
+
+        h1.title {
+            font-family: 'Noto Serif TC', serif;
+            letter-spacing: .2rem;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #262626;
+        }
+
+        .big-descriptions {
+
+            font-size: 18px;
+            font-family: 'Noto Sans TC';
+            letter-spacing: .3rem;
+            text-align: justify;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .big-descriptions {
+                font-size: 16px;
+            }
+        }
+
+        h2 {
+            margin-top: 10px;
+            font-family: 'Taviraj', serif;
+            letter-spacing: .1rem;
+
+        }
+
+        h5 {
+            font-weight: bold;
+            font-family: 'Noto Serif TC', serif;
+            margin-bottom: 30px;
+            letter-spacing: .2rem;
+        }
+
+        p {
+            font-size: 16px;
+            font-family: 'Noto Sans TC';
+            letter-spacing: .1rem;
+            text-align: justify;
+        }
+
+        /* animated animations */
+
+        .animatable {
+
+            /* initially hide animatable objects */
+            visibility: hidden;
+
+            /* initially pause animatable objects their animations */
+            -webkit-animation-play-state: paused;
+            -moz-animation-play-state: paused;
+            -ms-animation-play-state: paused;
+            -o-animation-play-state: paused;
+            animation-play-state: paused;
+        }
+
+        /* show objects being animated */
+        .animated {
+            visibility: visible;
+
+            -webkit-animation-fill-mode: both;
+            -moz-animation-fill-mode: both;
+            -ms-animation-fill-mode: both;
+            -o-animation-fill-mode: both;
+            animation-fill-mode: both;
+
+            -webkit-animation-duration: 2s;
+            -moz-animation-duration: 2s;
+            -ms-animation-duration: 2s;
+            -o-animation-duration: 2s;
+            animation-duration: 2s;
+
+            -webkit-animation-play-state: running;
+            -moz-animation-play-state: running;
+            -ms-animation-play-state: running;
+            -o-animation-play-state: running;
+            animation-play-state: running;
+        }
+
+
+        @-webkit-keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+            }
+        }
+
+        @-moz-keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                -moz-transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                -moz-transform: translateY(0);
+            }
+        }
+
+        @-o-keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                -o-transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                -o-transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @-webkit-keyframes bounceInRight {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateX(2000px);
+            }
+
+            60% {
+                -webkit-transform: translateX(-20px);
+            }
+
+            80% {
+                -webkit-transform: translateX(5px);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateX(0);
+            }
+        }
+
+        @-moz-keyframes bounceInRight {
+            0% {
+                opacity: 0;
+                -moz-transform: translateX(2000px);
+            }
+
+            60% {
+                -moz-transform: translateX(-20px);
+            }
+
+            80% {
+                -moz-transform: translateX(5px);
+            }
+
+            100% {
+                opacity: 1;
+                -moz-transform: translateX(0);
+            }
+        }
+
+        @-o-keyframes bounceInRight {
+            0% {
+                opacity: 0;
+                -o-transform: translateX(2000px);
+            }
+
+            60% {
+                -o-transform: translateX(-20px);
+            }
+
+            80% {
+                -o-transform: translateX(5px);
+            }
+
+            100% {
+                opacity: 1;
+                -o-transform: translateX(0);
+            }
+        }
+
+        @keyframes bounceInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(2000px);
+            }
+
+            60% {
+                transform: translateX(-20px);
+            }
+
+            80% {
+                transform: translateX(5px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-o-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            60% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .animated.animationDelay {
+            animation-delay: .4s;
+            -webkit-animation-delay: .4s;
+        }
+
+        .animated.animationDelayMed {
+            animation-delay: 1.2s;
+            -webkit-animation-delay: 1.2s;
+        }
+
+        .animated.animationDelayLong {
+            animation-delay: 1.6s;
+            -webkit-animation-delay: 1.6s;
+        }
+
+        .animated.fadeInUp {
+            -webkit-animation-name: fadeInUp;
+            -moz-animation-name: fadeInUp;
+            -o-animation-name: fadeInUp;
+            animation-name: fadeInUp;
+        }
+
+        .animated.bounceInRight {
+            -webkit-animation-name: bounceInRight;
+            -moz-animation-name: bounceInRight;
+            -o-animation-name: bounceInRight;
+            animation-name: bounceInRight;
+        }
+
+        .animated.fadeIn {
+            -webkit-animation-name: fadeIn;
+            -moz-animation-name: fadeIn;
+            -o-animation-name: fadeIn;
+            animation-name: fadeIn;
+        }
+
+        /* text animation */
+
+        #text {
+            width: 70%;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+        }
+
+        .char {
+            animation: an 1s ease-out 1 both;
+            display: inline-block;
+        }
+
+        @keyframes an {
+            from {
+                opacity: 0;
+                transform: perspective(500px) translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: perspective(500px) translate3d(0, 0, 0);
+            }
+        }
+
+        /* products */
+
+        .product-wrap {
+            margin-top: 50px;
+            width: 100%;
+            border-top: 25px solid #F2D5C4;
+            border-bottom: 25px solid #F2D5C4;
+            background-image: url(./images/background.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        @media (max-width: 400px) {
+            .product-wrap {
+                margin-left: 0;
+            }
+        }
+
+        .first-row,
+        .second-row {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .row--center {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .row--small {
+            margin: 0 auto;
+        }
+
+        .row--margin {
+            margin-top: 30px;
+        }
+
+        .left-bread {
+            position: relative;
+            /* padding-left: 20px;
+            padding-right: 20px; */
+            width: 100%;
+        }
+
+        .left-bread h1 {
+            font-size: 3rem;
+            transform: rotate(-90deg);
+            position: absolute;
+            top: 50%;
+            left: -5%;
+            border-bottom: none;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .left-bread h1 {
+                transform: none;
+                top: 10%;
+                right: 0;
+                text-align: center;
+                font-weight: bold;
+            }
+        }
+
+        .bread {
+            padding-top: 140px;
+            width: 110%;
+        }
+
+        .bread:hover {
+            width: 120%;
+        }
+
+
+        .bread-img-wrap figure img {
+            -webkit-transform: scale(.1);
+            transform: scale(.1);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+        }
+
+        .bread-img-wrap figure:hover img {
+            -webkit-transform: scale(.1);
+            transform: scale(.1);
+        }
+
+        .each-bread {
+            width: 250px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .bread-wrap {
+            /* margin-right: 50px; */
+            /* width: 250px; */
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        figure.image-zoom {
+            width: 200px;
+            height: 200px;
+            background: #fff;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 3px solid #F2D5C4;
+            margin: 0 auto;
+        }
+
+        .bread-wrap figure img {
+            width: 100%;
+            height: 100%;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+        }
+
+        .bread-wrap figure:hover img {
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+        }
+
+        .bread-wrap h5 {
+            text-align: center;
+        }
+
+        .unit {
+            width: 250px;
+            border: 1px solid #F2D5C4;
+            background: #fff;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            margin: 0 auto;
+        }
+
+        .quantity {
+            border: none;
+            width: 100px;
+            text-align: center;
+            background: none;
+            font-family: 'Noto Serif TC', serif;
+            font-weight: bold;
+        }
+
+        .minus {
+            width: 30px;
+            height: 30px;
+            background-color: #F2D5C4;
+            border-radius: 50%;
+            border: none;
+            font-weight: bold;
+        }
+
+        .add {
+            width: 30px;
+            height: 30px;
+            background-color: #F2D5C4;
+            border-radius: 50%;
+            border: none;
+            font-weight: bold;
+        }
+
+        .add-to-cart {
+            padding-top: 10px;
+            width: 250px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            /* justify-content: center; */
+
+        }
+
+        .add-to-cart p {
+            text-align: center;
+        }
+
+        .price {
+            width: 100px;
+            border: 1px solid #F2D5C4;
+            padding-top: 10px;
+            background: #fff;
+        }
+
+        .price p {
+            font-family: 'Taviraj', serif;
+            font-weight: bold;
+        }
+
+        .add-bag {
+            width: 150px;
+            border: 1px solid #F2D5C4;
+            padding-top: 10px;
+            background-color: #F2D5C4;
+        }
+
+        .add-bag p {
+            font-family: 'Noto Serif TC', serif;
+            font-weight: 700;
+            letter-spacing: .4rem;
+        }
+
+        @media screen and (max-width: 767px) {
+            .row {
+                height: auto;
+            }
+        }
+
+        /* add to cart popup */
+
+
+        /* Modal */
+
+        .modal,
+        .modal-box {
+            z-index: 900;
+        }
+
+        .modal-sandbox {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: transparent;
+
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, .8);
+            overflow: auto;
+            text-align: center;
+
+        }
+
+        .modal-box {
+            position: relative;
+            width: 80%;
+            max-width: 400px;
+            margin: 100px auto;
+            animation-name: modalbox;
+            animation-duration: .4s;
+            animation-timing-function: cubic-bezier(0, 0, .3, 1.6);
+        }
+
+        .modal-header {
+            padding: 20px 40px;
+            background: #232323;
+            font-family: 'Noto Serif TC', serif;
+            letter-spacing: .1rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .shopping_bag_modal {
+            width: 50px;
+            margin: 0 auto;
+        }
+
+        .modal-body {
+            color: #F2D5C4;
+            background: #232323;
+            font-family: 'Noto Serif TC', serif;
+            letter-spacing: .1rem;
+            padding: 30px 10px;
+        }
+
+        .modal-body p {
+            font-family: 'Noto Serif TC', serif;
+            letter-spacing: .1rem;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* Close Button */
+        .close-modal {
+            width: 150px;
+            border: transparent;
+            background-color: #F2D5C4;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            cursor: pointer;
+            font-family: 'Noto Sans';
+            letter-spacing: .1rem;
+        }
+
+        .add-bag:hover {
+            background-color: #F5DED6;
+        }
+
+        .close-modal:hover {
+            background-color: #FAEFEB;
+        }
+
+        /* Animation */
+        @-webkit-keyframes modalbox {
+            0% {
+                top: -250px;
+                opacity: 0;
+            }
+
+            100% {
+                top: 0;
+                opacity: 1;
+            }
+        }
+
+        @keyframes modalbox {
+            0% {
+                top: -250px;
+                opacity: 0;
+            }
+
+            100% {
+                top: 0;
+                opacity: 1;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .modal-body h1 {
+                font-size: 30px;
+            }
+        }
+
+        /* Modal ends */
+
+        /* add to cart pop-up ends */
+        /* product reviews */
+
+
+        .reviews-wrap {
+            width: 100%;
+            margin: 0;
+            color: #333;
+            overflow: hidden;
+            position: relative;
+            background-image: url(./images/breads-svg-bg.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h1.title-en {
+            border-bottom: none;
+            font-family: 'Noto Serif TC', serif;
+            letter-spacing: .1rem;
+            font-size: 3rem;
+        }
+
+        .all-reviews {
+            border-radius: 50px;
+            /* display: inline-block; */
+            display: flex;
+            transition: all .2s ease-out;
+            margin-top: 100px;
+        }
+
+        .all-reviews:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        li.each-review {
+            border: 2px solid #F2D5C4;
+            box-shadow: 5px 5px #aaaaaa;
+            border-radius: 30px;
+            margin-right: 50px;
+            width: 100%;
+            min-height: auto;
+            background-color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 30px;
+            list-style-type: none;
+            /* padding: 0 0 20px 20px; */
+            box-sizing: border-box;
+            /* height: 400px; */
+        }
+
+        .circle {
+            margin: 0 auto;
+            margin-bottom: -100px;
+            background: #F2D5C4;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            transform: translateY(-70px);
+        }
+
+        .quote {
+            font-size: 100px;
+            text-align: center;
+            color: white;
+            transform: translateY(18px);
+        }
+
+        .user-name {
+            margin-top: 20px;
+            padding: 25px 30px;
+            font-weight: bold;
+        }
+
+        .contents {
+            padding: 0 30px;
+            font-family: "Robto", Arial;
+            font-size: 1.2em;
+            text-align: justify;
+            /* letter-spacing: 1.4px; */
+        }
+
+        .marquee {
+            height: 700px;
+            max-width: 1920px;
+            /* border: 2px solid #eee; */
+            overflow: hidden;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .marquee--inner {
+            display: block;
+            width: 200%;
+            margin: 20px 0;
+            position: absolute;
+            animation: marquee 20s linear infinite;
+            animation-fill-mode: forwards;
+            overflow: hidden;
+        }
+
+        @media screen and (max-width: 767px) {
+
+            .marquee {
+                /* max-width: 767px; */
+                height: 700px
+            }
+
+            .marquee--inner {
+                width: 767px;
+                /* margin: 40px 20px; */
+                display: flex;
+                overflow: visible;
+                animation: marqueeMobile 10s linear infinite;
+            }
+
+            .all-reviews {
+                margin-top: 80px;
+                /* max-width: 767px; */
+                padding: 0;
+            }
+
+            .contents {
+                font-size: 1rem;
+                text-align: left;
+            }
+        }
+
+        .marquee--inner:hover {
+            animation-play-state: paused;
+        }
+
+        .marquee--inner>span {
+            float: left;
+            width: 50%;
+        }
+
+        @media screen and (max-width: 767px) {
+            .marquee--inner>span {
+                width: fit-content;
+            }
+        }
+
+
+        @keyframes marquee {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: -100%;
+            }
+        }
+
+        @keyframes marqueeMobile {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: -871px;
+            }
+        }
+
+        /* -------------------- Contact ------------------ */
+
+        .left-contact {
+            position: relative;
+            width: 100%;
+            background: #F2D5C4;
+            padding: 0;
+        }
+
+        .contact-us {
+            list-style-type: none;
+            flex-wrap: wrap;
+            overflow: hidden;
+            width: 100%;
+            margin-top: 30px;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .each-contact {
+            margin: 0 10px;
+            letter-spacing: .1rem;
+        }
+
+        .sm-icon {
+            width: 32px;
+            height: 32px;
+            margin: 5px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .each-contact {
+                margin: 0;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .left-contact .slider {
+                display: none;
+            }
+        }
+
+        .slide2 {
+            display: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+        }
+
+        .slide2:first-child {
+            display: block;
+        }
+
+        .slide2:nth-of-type(1) {
+            background-image: url(./images/yum-1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+            /* animation: zooomin 20s ease-in infinite; */
+            transition: all 5 ease-in-out;
+        }
+
+        .slide2:nth-of-type(2) {
+            background-image: url(./images/yum-2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+            /* animation: zooomin 20s ease-in infinite; */
+            transition: all 5 ease-in-out;
+        }
+
+        .slide2:nth-of-type(3) {
+            background-image: url(./images/yum-3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+            /* animation: zooomin 20s ease-in infinite; */
+            transition: all 5 ease-in-out;
+        }
+
+
+        .contact-info {
+            width: 100%;
+            background: #F2D5C4;
+            padding: 50px;
+            margin: 0 auto;
+        }
+
+        .contact-info h1 {
+            font-family: 'Taviraj', serif;
+            letter-spacing: .1rem;
+            padding-top: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+
+        }
+
+        .contact-info h4 {
+            margin: 0 auto;
+            font-size: 22px;
+            font-family: 'Noto Serif TC', serif;
+            letter-spacing: .1rem;
+            text-align: center;
+        }
+
+        .contact-logo-wrap {
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 767px) {
+
+            .contact-info h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+
+            .contact-info h4 {
+                line-height: 1.8rem;
+                font-size: 17px;
+            }
+        }
+
+        .contact-info .logo-pin {
+            width: 150px;
+        }
+
+        @media only screen and (max-width: 767px) {
+
+            .contact-info {
+                padding: 30px;
+            }
+        }
+
+        #contact {
+            padding: 0;
+        }
+
+        .pin-icon {
+            width: 50px;
+            margin-right: 20px;
+        }
+
+
+        input:focus~label,
+        textarea:focus~label,
+        input:valid~label,
+        textarea:valid~label {
+            color: #fff;
+            -webkit-transition: all 0.225s ease;
+            transition: all 0.225s ease;
+        }
+
+        .styled-input {
+            float: left;
+            width: 100%;
+            margin: 1rem 0;
+            position: relative;
+            border-radius: 4px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .styled-input {
+                width: 100%;
+            }
+        }
+
+        .styled-input label {
+            color: #F2D5C4;
+            padding: 1.3rem 30px 1rem 30px;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            -webkit-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+            pointer-events: none;
+        }
+
+        .styled-input.wide {
+            width: 650px;
+            max-width: 100%;
+        }
+
+        #contact input,
+        textarea {
+            padding: 30px;
+            border: 0;
+            width: 100%;
+            font-size: 1rem;
+            background-color: #232323;
+            color: white;
+            border-radius: 4px;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: 0;
+        }
+
+        input:focus~span,
+        textarea:focus~span {
+            width: 100%;
+            -webkit-transition: all 0.075s ease;
+            transition: all 0.075s ease;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 15em;
+        }
+
+        .input-container {
+            width: 650px;
+            max-width: 100%;
+            margin: 20px auto 25px auto;
+        }
+
+        .submit-btn {
+            /* float: left; */
+            padding: 15px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            border: 2px solid #232323;
+            background-color: #232323;
+            color: #F2D5C4;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06),
+                0 2px 10px 0 rgba(0, 0, 0, 0.07);
+            -webkit-transition: all 300ms ease;
+            transition: all 300ms ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #F2D5C4;
+            color: #232323;
+            transform: translateY(1px);
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.10),
+                0 1px 1px 0 rgba(0, 0, 0, 0.09);
+        }
+
+        @media (max-width: 768px) {
+            .submit-btn {
+                width: 100%;
+                float: none;
+                text-align: center;
+            }
+        }
+
+        input[type=checkbox]+label {
+            color: #ccc;
+            font-style: italic;
+        }
+
+        input[type=checkbox]:checked+label {
+            color: #f00;
+            font-style: normal;
+        }
+
+        @media only screen and (max-width: 767px) {
+
+            .name,
+            .comment,
+            .submit {
+                position: relative;
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 15px;
+            }
+        }
+
+        /* -------------------- Contact ------------------ */
+
+        /* -------------------- Footer ------------------ */
+
+        .footer {
+            width: 100%;
+            background-color: #232323;
+            color: #F2D5C4;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .copy-right,
+        .footer-info {
+            text-align: center;
+        }
+
+
+
+        /* loading animation */
+
+
+        /* loading animation */
+
+
+        /* remove button border */
+        button,
+        button:active,
+        button:focus {
+            outline: none;
+        }
+
+        /* return to top */
+        #return-to-top {
+            position: fixed;
+            z-index: 999;
+            bottom: 20px;
+            right: 20px;
+            /* background: rgb(0, 0, 0); */
+            background: rgba(0, 0, 0, 0.6);
+            width: 50px;
+            height: 50px;
+            display: block;
+            text-decoration: none;
+            -webkit-border-radius: 35px;
+            -moz-border-radius: 35px;
+            border-radius: 35px;
+            display: none;
+            -webkit-transition: all 0.3s linear;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        #return-to-top i {
+            color: #F2D5C4;
+            margin: 0;
+            position: relative;
+            left: 16px;
+            top: 13px;
+            font-size: 19px;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        #return-to-top:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        #return-to-top:hover i {
+            color: #fff;
+            top: 5px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            #return-to-top {
+                bottom: 12%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Return to Top -->
+    <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+
+    <!-- loading animation -->
+
+    <!-- loading animation ends -->
+
+    <div class="landing_wrap">
+        <!-- Header -->
+        <header>
+            <nav class="top-nav" role="navigation">
+                <div id="menuToggle" class="menu-fixed">
+                    <input type="checkbox" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <ul id="menu">
+                        <a href="morning.bakery.html#about">
+                            <li>ABOUT</li>
+                        </a>
+                        <a href="morning.bakery.html#product">
+                            <li>PRODUCTS</li>
+                        </a>
+                        <a href="morning.bakery.html#reviews">
+                            <li>REVIEWS</li>
+                        </a>
+                        <a href="morning.bakery.html#contact">
+                            <li>CONTACT</li>
+                        </a>
+                    </ul>
+                </div>
+                <!-- Menu Icons -->
+                <div id="menuIcons">
+                    <ul id="icons">
+                        <a href="https://www.instagram.com/">
+                            <li class="instagram"></li>
+                        </a>
+                        <a href="#">
+                            <li class="shopping_bag"></li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- header ends -->
+        <!-- logo -->
+        <div class="logo animatable fadeInUp"><img src="./images/logo-light.svg"></div>
+        <!-- scroll -->
+        <div class="scroll">
+            <svg class="arrows">
+                <path class="a1" d="M0 0 L30 32 L60 0"></path>
+                <path class="a2" d="M0 20 L30 52 L60 20"></path>
+                <path class="a3" d="M0 40 L30 72 L60 40"></path>
+            </svg>
+            <p class="scroll_text">SCROLL</p>
+        </div>
+
+        <div class="slider">
+            <div class="slide_viewer">
+                <div class="slide_group">
+                    <div class="slide">
+                    </div>
+                    <div class="slide">
+                    </div>
+                    <div class="slide">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End // .slider -->
+
+
+        <div class="directional_nav">
+            <div class="previous_btn" title="Previous">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                    y="0px" width="65px" height="65px" viewBox="-11 -11.5 65 66">
+                    <g>
+                        <g>
+                            <path fill="#F2D5C4"
+                                d="M-10.5,22.118C-10.5,4.132,4.133-10.5,22.118-10.5S54.736,4.132,54.736,22.118
+                  c0,17.985-14.633,32.618-32.618,32.618S-10.5,40.103-10.5,22.118z M-8.288,22.118c0,16.766,13.639,30.406,30.406,30.406 c16.765,0,30.405-13.641,30.405-30.406c0-16.766-13.641-30.406-30.405-30.406C5.35-8.288-8.288,5.352-8.288,22.118z" />
+                            <path fill="#F2D5C4"
+                                d="M25.43,33.243L14.628,22.429c-0.433-0.432-0.433-1.132,0-1.564L25.43,10.051c0.432-0.432,1.132-0.432,1.563,0	c0.431,0.431,0.431,1.132,0,1.564L16.972,21.647l10.021,10.035c0.432,0.433,0.432,1.134,0,1.564	c-0.215,0.218-0.498,0.323-0.78,0.323C25.929,33.569,25.646,33.464,25.43,33.243z" />
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="next_btn" title="Next">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                    y="0px" width="65px" height="65px" viewBox="-11 -11.5 65 66">
+                    <g>
+                        <g>
+                            <path fill="#F2D5C4"
+                                d="M22.118,54.736C4.132,54.736-10.5,40.103-10.5,22.118C-10.5,4.132,4.132-10.5,22.118-10.5	c17.985,0,32.618,14.632,32.618,32.618C54.736,40.103,40.103,54.736,22.118,54.736z M22.118-8.288	c-16.765,0-30.406,13.64-30.406,30.406c0,16.766,13.641,30.406,30.406,30.406c16.768,0,30.406-13.641,30.406-30.406 C52.524,5.352,38.885-8.288,22.118-8.288z" />
+                            <path fill="#F2D5C4"
+                                d="M18.022,33.569c 0.282,0-0.566-0.105-0.781-0.323c-0.432-0.431-0.432-1.132,0-1.564l10.022-10.035 			L17.241,11.615c 0.431-0.432-0.431-1.133,0-1.564c0.432-0.432,1.132-0.432,1.564,0l10.803,10.814c0.433,0.432,0.433,1.132,0,1.564 L18.805,33.243C18.59,33.464,18.306,33.569,18.022,33.569z" />
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div><!-- End // .directional_nav -->
+    </div>
+
+    <!-- Three Bread Descriptions -->
+
+    <div class="container three_descriptions mt-5" id="about">
+        <div class="row row--center">
+            <div class="col-md-7 col-xs-8 col-sm-6 col--inbl about-info">
+                <h1 class="title animatable fadeInUp" id="title">營養和美味，同時存在</h1>
+                <p class="big-descriptions mt-4 animatable fadeInUp">
+                    晨食烘培坊為了提供天然健康產品給我們的顧客和環境，以誠實追求食物健康和美味是我們一路走來的信念。晨食烘培坊的存在就是為了重視飲食品質、追求健康的顧客。
+                </p>
+            </div>
+        </div>
+        <div class="row row--small row--margin row--center">
+            <div class="col-md-4 col-sm-4 image-wrap mb-4">
+                <div>
+                    <figure><img src="./images/m-butter_1.jpg" class="three__descript" id=" three-images"></figure>
+                </div>
+                <h2 class="h2-title mt-4 animatable fadeInUp">BUTTER</h2>
+                <p class="descriptions animatable fadeInUp">
+                    豐富的比利時發酵奶油，並在高溫下烘烤，以最大程度地散發香味。
+                </p>
+            </div>
+
+            <div class="col-md-4 col-sm-4 image-wrap mb-4">
+                <div>
+                    <figure><img src="./images/m-flour_2.jpg" class="three__descript" id=" three-images"></figure>
+                </div>
+                <h2 class="h2-title mt-4 animatable fadeInUp">FLOUR</h2>
+                <p class="descriptions animatable fadeInUp">
+                    香醇的奶油香味從加熱的麵團中散發出來，使其略帶烘烤但味道濃郁。通過混合多種家用麵粉，我們創造了一種酥脆的獨特質地。
+                </p>
+            </div>
+
+            <div class="col-md-4 col-sm-4 image-wrap mb-4">
+                <div>
+                    <figure><img src="./images/dough.jpg" class="three__descript" id=" three-images"></figure>
+                </div>
+                <h2 class="h2-title mt-4 animatable fadeInUp">DOUGH</h2>
+                <p class="descriptions animatable fadeInUp">
+                    高水量的麵包技術展現，品嚐的到口感柔軟Q彈不黏牙的美味，低糖低油的健康堅持，享受無負擔的麵包饗宴。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Starts -->
+    <div class="container-fluid product-wrap" id="product">
+        <div class="row row--center left-bread">
+            <div class="col-sm-3">
+                <h1 class="title" id="title">Products</h1>
+                <div class="bread-img-wrap">
+                    <figure><img class="animatable bounceInRight bread" src="images/bread-bg.png"></figure>
+                </div>
+            </div>
+
+            <div class="col-sm-8 remove">
+                <div class="row row--small row--margin row--center first-row">
+                    <div class="bread-wrap col-md-4 col-sm-4 mb-4">
+                        <div class="each-bread animatable fadeInUp">
+                            <figure class="image-zoom"><a href="bread-1.html">
+                                    <img src="images/bread-1.jpg">
+                                </a></figure>
+                        </div>
+                        <h5 class="mt-3">水果裸麥(片裝)</h5>
+                        <div class="unit">
+                            <button class="minus">-</button>
+                            <input class="quantity" type="text" value="1" />
+                            <button class="add">+</button>
+                        </div>
+                        <div class="add-to-cart d-flex">
+                            <div class="price">
+                                <p>NT$50</p>
+                            </div>
+                            <button class="add-bag modal-trigger" data-modal="modal-name">
+                                <p>放入購物袋</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bread-wrap col-md-4 col-sm-4 mb-4">
+                        <div class="each-bread animatable fadeInUp">
+                            <figure class="image-zoom"><a href="bread-2.html">
+                                    <img src="images/bread-2.jpg">
+                                </a></figure>
+                        </div>
+                        <h5 class="mt-3">長法</h5>
+                        <div class="unit">
+                            <button class="minus">-</button>
+                            <input class="quantity" type="text" value="1" />
+                            <button class="add">+</button>
+                        </div>
+                        <div class="add-to-cart d-flex">
+                            <div class="price">
+                                <p>NT$80</p>
+                            </div>
+                            <button class="add-bag modal-trigger" data-modal="modal-name">
+                                <p>放入購物袋</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bread-wrap col-md-4 col-sm-4 mb-4">
+                        <div class="each-bread animatable fadeInUp">
+                            <figure class="image-zoom"><a href="bread-3.html">
+                                    <img src="images/bread-3.jpg">
+                                </a></figure>
+                        </div>
+                        <h5 class="mt-3">短法</h5>
+                        <div class="unit">
+                            <button class="minus">-</button>
+                            <input class="quantity" type="text" value="1" />
+                            <button class="add">+</button>
+                        </div>
+                        <div class="add-to-cart d-flex">
+                            <div class="price">
+                                <p>NT$52</p>
+                            </div>
+                            <button class="add-bag modal-trigger" data-modal="modal-name">
+                                <p>放入購物袋</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- second row -->
+                <div class="row row--small row--margin row--center second-row">
+                    <div class="bread-wrap col-md-4 col-sm-4 mb-4">
+                        <div class="each-bread animatable fadeInUp">
+                            <figure class="image-zoom"><a href="bread-4.html">
+                                    <img src="images/bread-4.jpg">
+                                </a></figure>
+                        </div>
+                        <h5 class="mt-3">莓果三重奏(片裝)</h5>
+                        <div class="unit">
+                            <button class="minus">-</button>
+                            <input class="quantity" type="text" value="1" />
+                            <button class="add">+</button>
+                        </div>
+                        <div class="add-to-cart d-flex">
+                            <div class="price">
+                                <p>NT$50</p>
+                            </div>
+                            <button class="add-bag modal-trigger" data-modal="modal-name">
+                                <p>放入購物袋</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bread-wrap col-md-4 col-sm-4 mb-4">
+                        <div class="each-bread animatable fadeInUp">
+                            <figure class="image-zoom"><a href="bread-5.html">
+                                    <img src="images/bread-5.jpg">
+                                </a></figure>
+                        </div>
+                        <h5 class="mt-3">法國球(三入)</h5>
+                        <div class="unit">
+                            <button class="minus">-</button>
+                            <input class="quantity" type="text" value="1" />
+                            <button class="add">+</button>
+                        </div>
+                        <div class="add-to-cart d-flex">
+                            <div class="price">
+                                <p>NT$42</p>
+                            </div>
+                            <button class="add-bag modal-trigger" data-modal="modal-name">
+                                <p>放入購物袋</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bread-wrap col-md-4 col-sm-4 mb-5">
+                        <div class="each-bread animatable fadeInUp">
+                            <figure class="image-zoom"><a href="bread-6.html">
+                                    <img src="images/bread-6.jpg">
+                                </a></figure>
+                        </div>
+                        <h5 class="mt-3">全麥吐司(5片裝)</h5>
+                        <div class="unit">
+                            <button class="minus">-</button>
+                            <input class="quantity" type="text" value="1" />
+                            <button class="add">+</button>
+                        </div>
+                        <div class="add-to-cart d-flex">
+                            <div class="price">
+                                <p>NT$70</p>
+                            </div>
+                            <button class="add-bag modal-trigger" data-modal="modal-name">
+                                <p>放入購物袋</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- add to cart pop-up -->
+    <!-- Modal -->
+    <div class="modal" id="modal-name">
+        <div class="modal-sandbox"></div>
+        <div class="modal-box">
+            <div class="modal-header">
+                <!-- <div class="close-modal">&#10006;</div> -->
+                <img class="shopping_bag_modal" src="./images/shopping-bag.svg">
+            </div>
+            <div class="modal-body">
+                <h1>已放入購物袋</h1>
+                <p>已將商品放入購物袋</p>
+                <button class="close-modal">我瞭解了</button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <!-- cart-popup -->
+
+    <!-- product reviews -->
+
+
+    <div class="container-fluid" id="reviews">
+        <div class="row row--center">
+            <div class="reviews-wrap mt-5">
+                <h1 class="title-en animatable fadeInUp" id="title">Reviews</h1>
+                <div class="marquee">
+                    <div class="marquee--inner">
+                        <span>
+                            <ul class="all-reviews">
+                                <li class="each-review">
+                                    <div class="circle">
+                                        <h2 class="quote">“</h2>
+                                    </div>
+                                    <p class="user-name">Yong Di Hsieh
+                                        <br><br> <span class="stars">
+                                            ⭐⭐⭐⭐⭐</span>
+                                    </p>
+                                    <p class="contents">司康很值得一吃，要早點去搶，希望星期天也開門😭😭上班族平常很難買嗚嗚～</p>
+                                </li>
+                                <li class="each-review">
+                                    <div class="circle">
+                                        <h2 class="quote">“</h2>
+                                    </div>
+                                    <p class="user-name">Koji
+                                        <br> <br> <span class="stars">
+                                            ⭐⭐⭐⭐</span>
+                                    </p>
+                                    <p class="contents">偶然通りかかった時に見つけたベーカリー。味は美味しかったのですが、店員さんが無愛想だったのが残念。</p>
+                                </li>
+                                <li class="each-review">
+                                    <div class="circle">
+                                        <h2 class="quote">“</h2>
+                                    </div>
+                                    <p class="user-name">Sandy Kao
+                                        <br> <br> <span class="stars">
+                                            ⭐⭐⭐⭐⭐</span>
+                                    </p>
+                                    <p class="contents">超愛雙倍巧克力餅乾
+                                        連續四週特地來買（知道有多愛了嗎）心目中第一名的軟餅乾🥇 司康、比司吉、肉桂捲也都很好吃！！想給十顆星</p>
+                                </li>
+                                <li class="each-review">
+                                    <div class="circle">
+                                        <h2 class="quote">“</h2>
+                                    </div>
+                                    <p class="user-name">Amy Yang
+                                        <br> <br> <span class="stars">
+                                            ⭐⭐⭐⭐⭐</span>
+                                    </p>
+                                    <p class="contents">An European style bakery in the heart of downtown Taipei. The
+                                        pain au chocolate was deliciously flaky! Will be back.</p>
+                                </li>
+                            </ul>
+                        </span>
+                        <span>
+                            <ul class="all-reviews">
+                                <li class="each-review">
+                                    <div class="circle">
+                                        <h2 class="quote">“</h2>
+                                    </div>
+                                    <p class="user-name">Yong Di Hsieh
+                                        <br><br> <span class="stars">
+                                            ⭐⭐⭐⭐⭐</span>
+                                    </p>
+                                    <p class="contents">司康很值得一吃，要早點去搶，希望星期天也開門😭😭上班族平常很難買嗚嗚～</p>
+                                </li>
+                                <li class="each-review">
+                                    <div class="circle">
+                                        <h2 class="quote">“</h2>
+                                    </div>
+                                    <p class="user-name">Koji
+                                        <br> <br> <span class="stars">
+                                            ⭐⭐⭐⭐</span>
+                                    </p>
+                                    <p class="contents">偶然通りかかった時に見つけたベーカリー。味は美味しかったのですが、店員さんが無愛想だったのが残念。</p>
+                                </li>
+                                <li class="each-review">
+                                    <div class="circle">
+                                        <h2 class="quote">“</h2>
+                                    </div>
+                                    <p class="user-name">Sandy Kao
+                                        <br> <br> <span class="stars">
+                                            ⭐⭐⭐⭐⭐</span>
+                                    </p>
+                                    <p class="contents">超愛雙倍巧克力餅乾
+                                        連續四週特地來買（知道有多愛了嗎）心目中第一名的軟餅乾🥇 司康、比司吉、肉桂捲也都很好吃！！想給十顆星</p>
+                                </li>
+                                <li class="each-review">
+                                    <div class="circle">
+                                        <h2 class="quote">“</h2>
+                                    </div>
+                                    <p class="user-name">Amy Yang
+                                        <br> <br> <span class="stars">
+                                            ⭐⭐⭐⭐⭐</span>
+                                    </p>
+                                    <p class="contents">An European style bakery in the heart of downtown Taipei. The
+                                        pain au chocolate was deliciously flaky! Will be back.</p>
+                                </li>
+                            </ul>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-------------------- Contact -------------------->
+
+    <div class="container-fluid" id="contact">
+        <div class="row ml-0 mr-0">
+            <div class="col-md-6 col-sm-4 left-contact">
+                <div class="slider">
+                    <div class="slide_viewer">
+                        <div class="slide_group">
+                            <div class="slide2">
+                            </div>
+                            <div class="slide2">
+                            </div>
+                            <div class="slide2">
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End // .slider -->
+
+
+                <div class="directional_nav">
+                    <div class="previous_btn" title="Previous">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px" y="0px" width="50px" height="50px" viewBox="-11 -11.5 65 66">
+                            <g>
+                                <g>
+                                    <path fill="#F2D5C4"
+                                        d="M-10.5,22.118C-10.5,4.132,4.133-10.5,22.118-10.5S54.736,4.132,54.736,22.118
+                              c0,17.985-14.633,32.618-32.618,32.618S-10.5,40.103-10.5,22.118z M-8.288,22.118c0,16.766,13.639,30.406,30.406,30.406 c16.765,0,30.405-13.641,30.405-30.406c0-16.766-13.641-30.406-30.405-30.406C5.35-8.288-8.288,5.352-8.288,22.118z" />
+                                    <path fill="#F2D5C4"
+                                        d="M25.43,33.243L14.628,22.429c-0.433-0.432-0.433-1.132,0-1.564L25.43,10.051c0.432-0.432,1.132-0.432,1.563,0	c0.431,0.431,0.431,1.132,0,1.564L16.972,21.647l10.021,10.035c0.432,0.433,0.432,1.134,0,1.564	c-0.215,0.218-0.498,0.323-0.78,0.323C25.929,33.569,25.646,33.464,25.43,33.243z" />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="next_btn" title="Next">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px" y="0px" width="50px" height="50px" viewBox="-11 -11.5 65 66">
+                            <g>
+                                <g>
+                                    <path fill="#F2D5C4"
+                                        d="M22.118,54.736C4.132,54.736-10.5,40.103-10.5,22.118C-10.5,4.132,4.132-10.5,22.118-10.5	c17.985,0,32.618,14.632,32.618,32.618C54.736,40.103,40.103,54.736,22.118,54.736z M22.118-8.288	c-16.765,0-30.406,13.64-30.406,30.406c0,16.766,13.641,30.406,30.406,30.406c16.768,0,30.406-13.641,30.406-30.406 C52.524,5.352,38.885-8.288,22.118-8.288z" />
+                                    <path fill="#F2D5C4"
+                                        d="M18.022,33.569c 0.282,0-0.566-0.105-0.781-0.323c-0.432-0.431-0.432-1.132,0-1.564l10.022-10.035 			L17.241,11.615c 0.431-0.432-0.431-1.133,0-1.564c0.432-0.432,1.132-0.432,1.564,0l10.803,10.814c0.433,0.432,0.433,1.132,0,1.564 L18.805,33.243C18.59,33.464,18.306,33.569,18.022,33.569z" />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div><!-- End // .directional_nav -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            </div>
+            <div class="col-md-6 col-sm-4 contact-info">
+                <div class="container contact-logo-wrap">
+                    <img class="logo-pin animatable fadeInUp" src="./images/logo-dark-bg.svg">
+                    <h1 class="animatable fadeInUp">Contact Us</h1>
+                </div>
+                <div class="row">
+                    <h4 style="text-align:center">我們非常重視您的意見，也很樂意解答您的問題，歡迎與我們聯絡，並祝您有個充實而愉快的健康美食生活。</h4>
+                    <ul class="contact-us d-flex">
+                        <li class="each-contact"><img class="sm-icon" src="./images/pin-icon.svg">台北市大安區信義路四段164號</li>
+                        <li class="each-contact"><img class="sm-icon" src="./images/phone-icon.svg">02-2717-5581</li>
+                    </ul>
+                </div>
+                <div class="row input-container">
+                    <div class="col-sm-12 name">
+                        <div class="styled-input wide">
+                            <input type="text" required />
+                            <label>您的姓名</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="styled-input">
+                            <input type="text" required />
+                            <label>電子郵件</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="styled-input">
+                            <input type="text" required />
+                            <label>聯絡電話</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 comment">
+                        <div class="styled-input wide">
+                            <textarea required></textarea>
+                            <label>意見內容</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 submit">
+                        <button class="btn-lrg submit-btn modal-trigger" data-modal="modal-name2">確定送出</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal-name2">
+        <div class="modal-sandbox"></div>
+        <div class="modal-box">
+            <div class="modal-header">
+                <img class="shopping_bag_modal" src="./images/heart.svg">
+            </div>
+            <div class="modal-body">
+                <h1>感謝您的來信</h1>
+                <p>我們將盡快回覆給您</p>
+                <button class="close-modal">我瞭解了</button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <!-------------------- Contact -------------------->
+
+    <!-------------------- Footer Starts -------------------->
+    <div class="footer">
+        <p class="copy-right">2021 © 晨食烘培 Morning Bakery.</p>
+        <p class="footer-info">聯絡電話：02-2717-5581 | 聯絡地址：台北市大安區信義路四段164號 | 電子郵件：service@morningbakery.com.tw</p>
+    </div>
+
+
+    <!-------------------- Footer Ends -------------------->
+
+    <!-- <script src="js/wow.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <script>
+
+        // loading animation
+
+        $(window).on("load", function () {
+            $(".loader-wrapper").fadeOut("slow");
+        });
+
+        // loading animation ends
+
+        // slider effect
+        $('.slider').each(function () {
+            var $this = $(this);
+            var $group = $this.find('.slide_group');
+            var $slides = $this.find('.slide, .slide2');
+            var bulletArray = [];
+            var currentIndex = 0;
+            var timeout;
+
+            function move(newIndex) {
+                var animateLeft, slideLeft;
+
+                advance();
+
+                if ($group.is(':animated') || currentIndex === newIndex) {
+                    return;
+                }
+
+                bulletArray[currentIndex].removeClass('active');
+                bulletArray[newIndex].addClass('active');
+
+                if (newIndex > currentIndex) {
+                    slideLeft = '100%';
+                    animateLeft = '-100%';
+                } else {
+                    slideLeft = '-100%';
+                    animateLeft = '100%';
+                }
+
+                $slides.eq(newIndex).css({
+                    display: 'block',
+                    left: slideLeft
+                });
+                $group.animate({
+                    left: animateLeft
+                }, function () {
+                    $slides.eq(currentIndex).css({
+                        display: 'none'
+                    });
+                    $slides.eq(newIndex).css({
+                        left: 0
+                    });
+                    $group.css({
+                        left: 0
+                    });
+                    currentIndex = newIndex;
+                });
+            }
+
+            function advance() {
+                clearTimeout(timeout);
+                timeout = setTimeout(function () {
+                    if (currentIndex < ($slides.length - 1)) {
+                        move(currentIndex + 1);
+                    } else {
+                        move(0);
+                    }
+                }, 4000);
+            }
+
+            $('.next_btn').on('click', function () {
+                if (currentIndex < ($slides.length - 1)) {
+                    move(currentIndex + 1);
+                } else {
+                    move(0);
+                }
+            });
+
+            $('.previous_btn').on('click', function () {
+                if (currentIndex !== 0) {
+                    move(currentIndex - 1);
+                } else {
+                    move(3);
+                }
+            });
+
+            $.each($slides, function (index) {
+                var $button = $('<a class="slide_btn">&bull;</a>');
+
+                if (index === currentIndex) {
+                    $button.addClass('active');
+                }
+                $button.on('click', function () {
+                    move(index);
+                }).appendTo('.slide_buttons');
+                bulletArray.push($button);
+            });
+
+            advance();
+        });
+
+        // ----------------------text animation 1----------------------------
+
+        jQuery(function ($) {
+
+            // Function which adds the 'animated' class to any '.animatable' in view
+            var doAnimations = function () {
+
+                // Calc current offset and get all animatables
+                var offset = $(window).scrollTop() + $(window).height(),
+                    $animatables = $('.animatable');
+
+                // Unbind scroll handler if we have no animatables
+                if ($animatables.length == 0) {
+                    $(window).off('scroll', doAnimations);
+                }
+
+                // Check all animatables and animate them if necessary
+                $animatables.each(function (i) {
+                    var $animatable = $(this);
+                    if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+                        $animatable.removeClass('animatable').addClass('animated');
+                    }
+                });
+
+            };
+
+            // Hook doAnimations on scroll, and trigger a scroll
+            $(window).on('scroll', doAnimations);
+            $(window).trigger('scroll');
+
+        });
+
+        // -------------------- add to cart -----------------------
+
+        $('.minus').click(function () {
+            var $input = $(this).parent().find('input');
+            var $amount = $(this).parent().next().find('.price p');
+            var count = parseInt($input.val()) - 1;
+            count = count < 1 ? 1 : count;
+            $amount.text('NT$' + (parseInt($input.val()) - 1) * $amount[0].innerHTML.replace('NT$', '') / parseInt($input.val()))
+            $input.val(parseInt($input.val()) - 1);
+            // $input.val(count);
+            // $input.change();
+            // return false;
+        });
+        $('.add').click(function () {
+            var $input = $(this).parent().find('input');
+            var $amount = $(this).parent().next().find('.price p');
+            console.log('amount', $amount[0].innerHTML.replace('NT$', ''))
+            $amount.text('NT$' + (parseInt($input.val()) + 1) * $amount[0].innerHTML.replace('NT$', '') / parseInt($input.val()))
+            $input.val(parseInt($input.val()) + 1);
+        });
+
+        // ------------------- remove class in mobile ---------------------
+        if ($(window).width() < 700) {
+            $(".remove").removeClass("fadeInUp");
+        }
+
+        // ------------------- add to bag modal -----------------------
+        $(".modal-trigger").click(function (e) {
+            e.preventDefault();
+            dataModal = $(this).attr("data-modal");
+            $("#" + dataModal).css({ "display": "block" });
+            // $("body").css({"overflow-y": "hidden"}); //Prevent double scrollbar.
+        });
+
+        $(".close-modal, .modal-sandbox").click(function () {
+            $(".modal").css({ "display": "none" });
+            // $("body").css({"overflow-y": "auto"}); //Prevent double scrollbar.
+        });
+
+
+        // ------------------- contact button modal -----------------------
+        $(".modal-trigger").click(function (e) {
+            e.preventDefault();
+            dataModal = $(this).attr("data-modal");
+            $("#" + dataModal).css({ "display": "block" });
+            // $("body").css({"overflow-y": "hidden"}); //Prevent double scrollbar.
+        });
+
+        $(".close-modal, .modal-sandbox").click(function () {
+            $(".modal").css({ "display": "none" });
+            // $("body").css({"overflow-y": "auto"}); //Prevent double scrollbar.
+        });
+
+        // --------------------- Scroll to top button ---------------------
+        $(window).scroll(function () {
+            if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+                $('#return-to-top').fadeIn(200);    // Fade in the arrow
+            } else {
+                $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+            }
+        });
+        $('#return-to-top').click(function () {      // When arrow is clicked
+            $('body,html').animate({
+                scrollTop: 0                       // Scroll to top of body
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>
